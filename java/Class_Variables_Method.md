@@ -36,6 +36,8 @@ class Employee {
 - `String name` → 변수 variables
 - `public void setName()` → 메소드 method
 
+<br>
+
 # Instance Variables
 
 - 인스턴스 변수는 클래스 내에서 static 키워드 없이 선언된 변수이다.
@@ -68,6 +70,8 @@ public class Lecture {
   - Lecture와 Employee가 같은 패키지
 - 그러나 만약 name이 private이라면 오류가 생긴다.
 
+<br>
+
 # Methods
 
 ## Method Header
@@ -87,6 +91,8 @@ public class Lecture {
 
 - 오브젝트의 메소드가 호출되었을 때, 오브젝트 자체를 가리키기 위하여 **this**를 쓴다.
 
+<br>
+
 # 캡슐화
 
 - 필요한 것만 public하게 두고 나머지는 감춘다.
@@ -103,6 +109,8 @@ class Employee {
     }
 }
 ```
+
+<br>
 
 # 오브젝트 생성하기
 
@@ -200,6 +208,8 @@ public class Lecture {
 }
 ```
 
+<br>
+
 # 변수의 사용
 
 ## 인스턴스 변수 초기화
@@ -283,6 +293,8 @@ public class Lecture {
     }
 }
 ```
+
+<br>
 
 # Call by value
 
