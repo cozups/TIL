@@ -6,9 +6,45 @@
 
 - 특정 K값보다 같거나 큰값이 처음 나오는 위치를 리턴
 
+```
+public static int lowerBound(int k) {
+        int lo = 0; int hi = n;
+        // arr[0] ~ arr[n-1]보다 큰 숫자를 찾을 때 결과값은 n일 것이기 때문에 hi를 n으로 둔다.
+
+        while(lo < hi) {
+            int mid = (lo+hi)/2;
+            if(arr[mid] >= k) {
+                hi = mid;
+            } else {
+                lo = mid+1;
+            }
+        }
+
+        return lo;
+    }
+```
+
 ### Upper Bound
 
 - K값보다 처음으로 큰 값이 나오는 위치를 리턴
+
+```
+public static int upperBound(int k) {
+        int lo = 0; int hi = n;
+        // arr[0] ~ arr[n-1]보다 큰 숫자를 찾을 때 결과값은 n일 것이기 때문에 hi를 n으로 둔다.
+
+        while(lo < hi) {
+            int mid = (lo+hi)/2;
+
+            if(arr[mid] > k) {
+                hi = mid;
+            } else lo = mid+1;
+        }
+
+        return lo;
+    }
+
+```
 
 <br/>
 
