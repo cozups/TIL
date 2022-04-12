@@ -183,3 +183,93 @@ footer { clear: both; }
   - 요소가 float되면 요소가 띄워져 새로운 레이어 층(위층)을 만든다.
   - 즉, 아래 층 레이어는 비어있게 되어 뒤따라오는 요소가 float 된 요소 아래에 배치된다.
   - clear를 사용하면 float된 요소를 찾게 되고 밑에 깔려있던 레이어는 이를 인식하고 아래로 내려가게 됨.
+
+<br>
+
+## transform
+
+`transform: rotate(45deg);`
+
+- 요소를 **평면적으로** 45도 회전
+
+`transform: scale(2, 3);`
+
+- 숫자는 비율을 의미
+  - x축 2배, y축 3배
+  - 숫자 1개만 쓰면 둘 다 확대
+
+`transform: skew(10deg, 20deg);`
+
+- 요소를 **입체적으로** 회전
+  - x축 10도, y축 20도 회전
+
+`transform: translate(100px, 200px);`
+
+- 요소의 좌표 변경
+
+### prefix 접두사
+
+```
+<style>
+.transition {
+  -webkit-transform: translate(100px, 200px); /* 크롬, 사파리 */
+  -moz-transform: translate(100px, 200px);    /* 파이어폭스 */
+  -ms-transform: translate(100px, 200px);     /* 익스플로러 9.0 */
+  -o-transform: translate(100px, 200px);      /* 오페라 */
+}
+</style>
+```
+
+<br>
+
+## transition
+
+`transition-property`
+
+- transition 적용할 css 속성
+
+`transition-duration`
+
+- 효과가 나타나는데 걸리는 시간(몇 초동안 적용할 건지?)
+
+`transition-timing-function`
+
+- 효과의 속도
+
+`transiton-delay`
+
+- 몇 초 후에 효과를 적용하는지?
+
+### 가상 선택자 :hover
+
+```
+<style>
+  .transition: hover { width: 300px; }
+</style
+```
+
+- 마우스를 올렸을 때 적용
+
+<br>
+
+## Animation
+
+`animation-name`
+
+- 애니메이션 이름
+
+`animation-duration`
+`animation-timing-function`
+`animation-delay`
+
+- transition과 비슷
+
+`animation-iteration-count`
+
+- 몇 번 반복?
+
+`animation-direction`
+
+- `alternate`: from → to → from
+- `normal`: from → to
+- `reverse`: to → from
