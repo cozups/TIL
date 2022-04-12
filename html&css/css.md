@@ -273,3 +273,33 @@ footer { clear: both; }
 - `alternate`: from → to → from
 - `normal`: from → to
 - `reverse`: to → from
+
+<br>
+
+## 미디어쿼리
+
+```
+.media {
+  width: 500px;
+  height: 500px;
+  background-color: red;
+}
+@media (min-width: 320px) and (max-width: 800px) {
+  width: 300px;
+  height: 300px;
+  background-color: yellow;
+}
+```
+
+- 최소 가로 길이 320px 최대 가로 길이 800px 사이에서 중괄호 안의 스타일을 적용하겠다는 의미
+
+### 주의사항
+
+`<meta name="viewport" content=“width=device-width, nitial-scale=1.0”>`
+
+- viewport 설정을 해야 모바일 화면에서도 의도한 화면을 볼 수 있다.
+- `viewport`: 디지털 기기의 화면 상에 표시되는 영역
+- `width=device-width`: 디바이스의 가로 폭
+- `initial-scale=1.0`: 비율은 항상 1.0
+- 미디어 쿼리는 미디어 쿼리 외부 영역에 있는 CSS 속성을 상속받는다.
+  - 만약 상속 받고 싶지 않다면 none으로 설정해야함.
