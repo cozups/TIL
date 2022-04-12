@@ -74,3 +74,30 @@ h1 {
 3. 선택자
 
 - inline > id > class > type
+
+## CSS 주요 속성 (까먹을것 같은 것만)
+
+### font
+
+`font-family: Arial, sans-serif`
+
+- 앞에 쓴 것부터 우선순위
+  - Arial이 없으면 → sans-serif
+
+### background
+
+`background-image: url('이미지경로')`
+
+- 이미지 붙여넣을 때 url()
+
+`background-repeat: no-repeat`
+
+- 백그라운드 이미지 반복
+  - `repeat-x`: x축 반복
+  - `repeat-y`: y축 반복
+  - `no-repeat`: 반복x
+
+`background-position: left`
+
+- 공간 안에서 이미지 좌표를 변경할 때
+  - `top`, `bottom`, `center`, `left`, `right`
