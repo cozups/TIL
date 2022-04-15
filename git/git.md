@@ -13,6 +13,7 @@
 ## 사용자 정보 설정
 
 `git config --global user.name "name"` 유저 네임 설정
+
 `git config --global user.email gitaccount@email.com` 유저 이메일 설정
 
 - 프로젝트마다 다른 사용자 정보를 사용할 땐 `--global` 제외
@@ -26,6 +27,7 @@
 ## 파일을 준비 영역으로 보내기
 
 `git add [파일명.확장자]`
+
 `git add .` 모든 파일을 add
 
 ## Git 저장소 반영
