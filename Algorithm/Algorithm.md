@@ -210,3 +210,17 @@ public static int upperBound(int k) {
 - 예제 2
 
 ![lowerUpper2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F2eip7%2FbtqwwYRwAfB%2FTuM9ohOJ7TGEWJtiw3w8nk%2Fimg.png)
+
+## 벡터에서 중복 원소 제거하기
+
+```
+vector<int> v = {2,3,3,5,7,8,8,8};
+
+v.erase(unique(v.begin(), v.end()), v.end);
+```
+
+`unique(v.begin(), v.end())`
+{2,3,3,5,7,8,8,8} -> {2,3,5,7,8,**3,8,8**}
+처음으로 중복 원소가 나타나는 '3'의 주소를 리턴한다.
+
+따라서 `v.erase(unique(v.begin(), v.end()), v.end);`를 하면 {3,8,8}이 지워진다.
