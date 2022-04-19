@@ -7,6 +7,7 @@
 | const | block scoped    | 불가능 | 불가능 |
 
 <br>
+
 # Module
 
 ## export
@@ -110,6 +111,7 @@ export default User;
 `default`를 붙인 모듈은 중괄호 `{}`없이 모듈을 가져올 수 있다.
 
 **중괄호를 달면 오류가 난다.**
+
 <br>
 
 # Template Literal
@@ -125,6 +127,7 @@ alert(`1 + 2 = ${sum(1, 2)}.`); // 1 + 2 = 3.
 ```
 
 <br>
+
 # Arrow Function
 
 ```
@@ -140,6 +143,7 @@ let func = (arg1, arg2, ...argN) => expression;
 ```
 
 <br>
+
 # class
 
 ```
@@ -155,7 +159,9 @@ console.log(cozups);
 ```
 
 <br>
+
 # forEach
+
 주어진 `callback`을 배열의 각 요소에 대해 한 번씩 실행한다.
 
 ```
@@ -165,7 +171,9 @@ names.forEach((e) => console.log(e))
 ```
 
 <br>
+
 # map()
+
 배열 내 각각의 모든 요소들에 대하여 주어진 함수를 호출한 결과를 모아 배열로 반환한다.
 
 ```
@@ -179,6 +187,7 @@ console.log(map1);
 ```
 
 <br>
+
 # reduce()
 
 `initial value`가 주어진 경우, `initial value`에 '각 요소에 대한 `callback` 함수 결과값'이 누적된다.
