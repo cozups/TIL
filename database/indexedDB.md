@@ -14,25 +14,36 @@ IndexedDB를 사용하려면 데이터베이스 스키마를 지정하고, 데�
 ## 클라이언트 측 브라우저에 저장하기 위한 API
 
 1. 쿠키 (Cookies)
+
    문서 내부에 간단한 문자열 데이터를 저장
 
+<br>
+
 2. 로컬 저장소 (Local Storage)
+
    사용자가 직접 지우기전까지는 데이터가 영구적으로 보존된다.
+
    Local Storage는 5mb로 제한되어 있다. (일부 브라우저는 늘릴 수 있음)
 
+<br>
+
 3. 세션 저장소 (Session Storage)
+
    탭을 닫거나 브라우저를 종료하면 데이터가 모두 사라진다.
+
    용량 제한이 없다.
 
+<br>
+
 4. IndexedDB
+
    Key를 이용해 Index되는 구조화된 데이터를 쉽게 저장
 
    IndexedDB의 데이터는 인덱스 키를 사용해 저장하고 회수할 수 있음.
 
    localStorage에 비해 훨씬 많은 데이터 저장 가능
 
-   Index를 지원하기 때문에
-   **많은 양의 구조화된 데이터**를 다룰 때 적합하다
+   Index를 지원하기 때문에 **많은 양의 구조화된 데이터**를 다룰 때 적합하다
 
 로컬 스토리지와 세션 스토리지는 웹 스토리지이다.
 
@@ -85,6 +96,8 @@ console.log('Error creating or accessing db')
 }
 ```
 
+<br>
+
 **2. ObjectStore 생성**
 
 - ObjectStore: 데이터를 담는 공간이며 여러개의 Key-Value 값으로 형성
@@ -123,6 +136,8 @@ onRequest.onupgradeneeded = () => {
 ```
 
 object store를 생성하고 수정하는 것은 오직 IndexedDB의 버전을 업데이트 하는 과정에서 수행되어야 한다. 즉 `upgradeneeded` 이벤트 핸들러 내에서 생성과 수정이 일어나야 한다.
+
+<br>
 
 **3. Transaction 시작 - 데이터 추가, 검색 작업 요청**
 
@@ -230,4 +245,5 @@ dbPromise.then(function(db) {
 `objectStore.delete()` 사용
 
 **4. index마다 DOM 이벤트 수신해서 작업**
+
 **5. 결과 수행**
