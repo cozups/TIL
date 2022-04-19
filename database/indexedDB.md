@@ -17,23 +17,17 @@ IndexedDB를 사용하려면 데이터베이스 스키마를 지정하고, 데�
 
    문서 내부에 간단한 문자열 데이터를 저장
 
-<br>
-
 2. 로컬 저장소 (Local Storage)
 
    사용자가 직접 지우기전까지는 데이터가 영구적으로 보존된다.
 
    Local Storage는 5mb로 제한되어 있다. (일부 브라우저는 늘릴 수 있음)
 
-<br>
-
 3. 세션 저장소 (Session Storage)
 
    탭을 닫거나 브라우저를 종료하면 데이터가 모두 사라진다.
 
    용량 제한이 없다.
-
-<br>
 
 4. IndexedDB
 
@@ -199,6 +193,8 @@ dbPromise.then(function(db) {
 
 `objectStore.add()` 사용
 
+<br>
+
 **사용자 데이터 읽기**
 
 ```
@@ -217,6 +213,8 @@ return store.getAll()
 
 `objectStore.get()`과 `objectStore.getAll()` 사용
 
+<br>
+
 **사용자 데이터 수정**
 
 ```
@@ -229,6 +227,8 @@ dbPromise.then(function(db) {
 ```
 
 `objectStore.put()` 사용
+
+<br>
 
 **사용자 데이터 삭제**
 
@@ -243,6 +243,8 @@ dbPromise.then(function(db) {
 ```
 
 `objectStore.delete()` 사용
+
+<br>
 
 **4. index마다 DOM 이벤트 수신해서 작업**
 
