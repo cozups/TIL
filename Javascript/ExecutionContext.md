@@ -28,6 +28,7 @@
 ![globalcontext](https://poiemaweb.com/img/ec-vo-global.png)
 
 - Global Context
+
   함수 안에서 실행되는 코드가 아니라면 전부 전역 컨텍스트에서 실행된다.
 
 <br>
@@ -35,6 +36,7 @@
 ![functionalcontext](https://poiemaweb.com/img/ec-vo-foo.png)
 
 - Functional Context
+
   선언된 함수가 호출될 때를 기점으로 생성된다.
 
   함수의 모든 동작이 끝나면 소멸된다. (Closure를 사용한다면 소멸하지 않고 이용할 수 있다.)
