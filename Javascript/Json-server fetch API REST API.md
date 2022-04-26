@@ -103,11 +103,12 @@ console.log(str);
 
 # REST API
 
-| C   | create | POST   |
-| --- | ------ | ------ |
-| R   | read   | GET    |
-| U   | update | PUT    |
-| D   | delete | DELETE |
+| CRUD |        | Method |
+| ---- | ------ | ------ |
+| C    | create | POST   |
+| R    | read   | GET    |
+| U    | update | PUT    |
+| D    | delete | DELETE |
 
 GET
 
