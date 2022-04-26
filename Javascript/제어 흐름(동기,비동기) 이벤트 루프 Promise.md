@@ -20,9 +20,9 @@ let a = 10;
 console.log("a: ", a);
 
 function foo(num) {
-	for(let i=0; i<10; i++) {
-		console.log(num);
-	}
+  for (let i = 0; i < 10; i++) {
+    console.log(num);
+  }
 }
 
 foo(a);
@@ -39,10 +39,10 @@ foo(a);
 let a = 10;
 
 setTimeout(function callback() {
-	console.log("a: ", a);
-}, 3000)
+  console.log("a: ", a);
+}, 3000);
 
-console.log('Finished');
+console.log("Finished");
 ```
 
 ![https://velog.velcdn.com/images%2Fmatisse%2Fpost%2F43402635-d562-4d6f-9c68-e4493fc76022%2Fimage.png](https://velog.velcdn.com/images%2Fmatisse%2Fpost%2F43402635-d562-4d6f-9c68-e4493fc76022%2Fimage.png)
@@ -68,7 +68,7 @@ console.log('Finished');
 
 자바스크립트는 이벤트 루프를 이용해서 비동기 방식으로 동시성을 지원한다.
 
-![Untitled](%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A5%20%E1%84%92%E1%85%B3%E1%84%85%E1%85%B3%E1%86%B7(%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5,%E1%84%87%E1%85%B5%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%B5)%20%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A6%E1%86%AB%E1%84%90%E1%85%B3%20%E1%84%85%E1%85%AE%E1%84%91%E1%85%B3%20Promise%2060062e0004da49eb8148313614bae43f/Untitled.png)
+![Untitled](./images/Untitled.png)
 
 - 비동기 코드를 처리하는 모듈은 자바스크립트 엔진 외부에 있다.
 - 이벤트 루프, 태스크 큐, 잡 큐 등으로 구성된다.
@@ -83,13 +83,13 @@ console.log('Finished');
 
 ```jsx
 setTimeout(() => {
-	console.log("타임아웃 1");
+  console.log("타임아웃 1");
 }, 0);
 
 Promise.resolve().then(() => console.log("프로미스 1"));
 
 setTimeout(() => {
-	console.log("타임아웃 2");
+  console.log("타임아웃 2");
 }, 0);
 
 Promise.resolve().then(() => console.log("프로미스 2"));
@@ -102,38 +102,36 @@ Promise.resolve().then(() => console.log("프로미스 2"));
 비동기 작업의 진행, 성공, 실패 상태를 표현한다.
 
 - 성공: pending → fulfilled (resolved)
-    - then
+  - then
 - 실패: pending → rejected
-    - catch
+  - catch
 
 fulfilled, rejected를 합쳐서 settled라고도 함.
 
 ## Promise 생성자
 
 ```jsx
-let promise = new
-Promise((resolve, reject) => 
-{
-	if (Math.random() < 0.5) {
-		return reject("실패")
-	}
-	resolve(10)
-})
+let promise = new Promise((resolve, reject) => {
+  if (Math.random() < 0.5) {
+    return reject("실패");
+  }
+  resolve(10);
+});
 ```
 
 ## Promise 메서드 체인
 
 ```jsx
 promise
-.then(data => {
-	console.log("성공: ", data)
-})
-.catch(e => {
-	console.log("실패 : ", e)
-})
-.finally(() => {
-	console.log("promise 종료")
-})
+  .then(data => {
+    console.log("성공: ", data);
+  })
+  .catch(e => {
+    console.log("실패 : ", e);
+  })
+  .finally(() => {
+    console.log("promise 종료");
+  });
 ```
 
 then → 성공
@@ -145,12 +143,8 @@ finally → 성공, 실패 상관 없이 실행
 ## Promise.resolve, Promise.reject
 
 ```jsx
-Promise
-	.resolve(10)
-	.then(console.log)
-Promise
-	.reject("Error")
-	.catch(console.log)
+Promise.resolve(10).then(console.log);
+Promise.reject("Error").catch(console.log);
 ```
 
 Promise.resolve → 성공한 promise 바로 반환
@@ -160,19 +154,15 @@ Promise.reject → 실패한 Promise 바로 반환
 ## Promise.all
 
 ```jsx
-Promise.all([
-	promise1,
-	promise2,
-	promise3
-])
-.then(values => {
-	console.log("모두 성공 : ", values)
-})
-.catch(e => {
-	console.log("하나라도 실패 : ", e)
-})
+Promise.all([promise1, promise2, promise3])
+  .then(values => {
+    console.log("모두 성공 : ", values);
+  })
+  .catch(e => {
+    console.log("하나라도 실패 : ", e);
+  });
 ```
 
 - Promise의 배열을 받아 모두 성공 시 각 Promise의 resolved 값을 배
-열로 반환한다.
+  열로 반환한다.
 - 하나의 Promise라도 실패할 시, 가장 먼저 실패한 Promise의 실패 이유를 반환한다.
