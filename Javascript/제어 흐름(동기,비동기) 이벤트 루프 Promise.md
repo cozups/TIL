@@ -77,6 +77,14 @@ console.log("Finished");
 
 # Promise
 
+_“미래의 어떤 시점에 결과를 제공하겠다는 약속”_
+
+비동기 작업의 완료/실패 값
+
+비동기 메소드에서 마치 동기 메소드처럼 값을 반환할 수 있다.
+
+<br>
+
 태스크 큐가 아닌 잡 큐를 사용하는 비동기 API
 
 잡 큐는 태스크 큐보다 우선순위가 높다.
@@ -98,6 +106,8 @@ Promise.resolve().then(() => console.log("프로미스 2"));
 ```
 
 ## Promise 단계
+
+![picture](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5d872951-3ddb-4d0f-961c-8684679c05e6/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220428T133539Z&X-Amz-Expires=86400&X-Amz-Signature=0f2fbd4839728ee163859c47a51636a7f81d1334f9b2738365d4c14f19e47ee2&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
 
 비동기 작업의 진행, 성공, 실패 상태를 표현한다.
 
@@ -166,3 +176,10 @@ Promise.all([promise1, promise2, promise3])
 - Promise의 배열을 받아 모두 성공 시 각 Promise의 resolved 값을 배
   열로 반환한다.
 - 하나의 Promise라도 실패할 시, 가장 먼저 실패한 Promise의 실패 이유를 반환한다.
+
+## Promise.race
+
+모든 프로미스 중 하나라도 처리될 때 까지 대기하는 프로미스 반환
+
+- 이행 → 첫 번째로 이행된 프로미스 값
+- 거부 → 거부된 첫 프로미스의 사유
