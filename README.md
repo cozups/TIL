@@ -12,6 +12,8 @@
 
 [Javascript](https://github.com/cozups/TIL/tree/main/Javascript) - 책
 
+[모던 자바스크립트 Deep Dive 스터디](https://github.com/cozups/TIL/tree/main/Javascript/Deep%20Dive)
+
 ## Algorithm
 
 [Algorithm](https://github.com/cozups/TIL/tree/main/Algorithm)
