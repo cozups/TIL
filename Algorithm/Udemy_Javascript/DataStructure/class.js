@@ -28,9 +28,14 @@ class Student {
     let sum = this.scores.reduce((a, b) => a + b, 0);
     return sum / this.scores.length;
   }
+
+  static EnrollStudents(...students) {
+    return students;
+  }
 }
 
 const student1 = new Student('Miso', 'Kim', 4);
+const student2 = new Student('Colt', 'Steel', 2);
 console.log(student1.fullName());
 console.log(student1.markLate());
 console.log(student1.markLate());
@@ -40,3 +45,4 @@ console.log(student1.addScore(80));
 console.log(student1.addScore(76));
 console.log(student1.addScore(17));
 console.log(student1.calculateAverage());
+console.log(Student.EnrollStudents(student1, student2));
