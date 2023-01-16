@@ -154,6 +154,23 @@ class SinglyLinkedList {
 
     return removed;
   }
+
+  reverse() {
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+
+    let next = null;
+    let prev = null;
+    for (let i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+
+    return this;
+  }
 }
 
 const list = new SinglyLinkedList();
@@ -161,5 +178,5 @@ list.push(100);
 list.push(201);
 list.push(250);
 list.push(300);
-list.remove(1);
+list.reverse();
 list.traverse();
