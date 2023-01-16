@@ -27,12 +27,13 @@ class SinglyLinkedList {
     return this;
   }
 
-  // traverse() {
-  //   let current = this.head;
-  //   while (current != null) {
-  //     current = current.next;
-  //   }
-  // }
+  traverse() {
+    let current = this.head;
+    while (current != null) {
+      console.log(current);
+      current = current.next;
+    }
+  }
 
   pop() {
     if (!this.head) {
@@ -111,13 +112,54 @@ class SinglyLinkedList {
 
     return false;
   }
+
+  insert(index, val) {
+    if (index < 0 || index > this.length) {
+      return false;
+    }
+
+    if (index === this.length) {
+      return !!this.push(val);
+    }
+    if (index === 0) {
+      return !!this.unshift(val);
+    }
+
+    const newNode = new Node(val);
+    const prev = this.get(index - 1);
+    newNode.next = prev.next;
+    prev.next = newNode;
+
+    this.length += 1;
+
+    return true;
+  }
+
+  remove(index) {
+    if (index < 0 || index > this.length) {
+      return undefined;
+    }
+
+    if (index === this.length - 1) {
+      return this.pop();
+    }
+    if (index === 0) {
+      return this.shift();
+    }
+    const prev = this.get(index - 1);
+    const removed = prev.next;
+    prev.next = removed.next;
+
+    this.length -= 1;
+
+    return removed;
+  }
 }
 
 const list = new SinglyLinkedList();
-list.push('HELLO');
-list.push('GOODBYE');
-list.push('!');
-list.push('<3');
-list.push(':)');
-console.log(list.set(2, '~'));
-console.log(list.get(2));
+list.push(100);
+list.push(201);
+list.push(250);
+list.push(300);
+list.remove(1);
+list.traverse();
