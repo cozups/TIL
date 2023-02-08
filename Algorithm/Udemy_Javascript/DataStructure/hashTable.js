@@ -35,11 +35,51 @@ class HashTable {
     }
     return undefined;
   }
+
+  keys() {
+    let keysArr = [];
+
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (this.keyMap[i]) {
+        for (let [key, _] of this.keyMap[i]) {
+          if (!keysArr.includes(key)) {
+            keysArr.push(key);
+          }
+        }
+      }
+    }
+
+    return keysArr;
+  }
+
+  values() {
+    let valuesArr = [];
+
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (this.keyMap[i]) {
+        for (let [_, value] of this.keyMap[i]) {
+          if (!valuesArr.includes(value)) {
+            valuesArr.push(value);
+          }
+        }
+      }
+    }
+
+    return valuesArr;
+  }
 }
 
 const ht = new HashTable();
-ht.set('hello world', 'goodbye!!');
-ht.set('dogs', 'are cool');
-ht.set('cats', 'are fine');
-ht.set('i love', 'pizza');
-console.log(ht.get('hello world'));
+ht.set('maroon', '#800000');
+ht.set('yellow', '#FFFF00');
+ht.set('olive', '#808000');
+ht.set('salmon', '#FA8072');
+ht.set('lightcoral', '#F08080');
+ht.set('mediumvioletred', '#C71585');
+ht.set('plum', '#DDA0DD');
+ht.set('plum', 'DOUBLE!!');
+ht.set('purple', '#DDA0DD');
+ht.set('violet', '#DDA0DD');
+console.log(ht.keys());
+console.log(ht.values());
+console.log(ht.get('plum'));
