@@ -2,9 +2,9 @@ import React from 'react';
 
 function User({ users, onToggle }) {
   // null checking
-  if (!users) {
-    return null;
-  }
+  // if (!users) {
+  //   return null;
+  // }
 
   return (
     <ul>
