@@ -32,14 +32,88 @@ class Graph {
 
     delete this.adjacencyList[vertex];
   }
+
+  DFS_recursive(start) {
+    let result = [];
+    let visited = {};
+
+    const helper = (v) => {
+      if (!v) return null;
+
+      visited[v] = true;
+      result.push(v);
+
+      for (let adjVertex of this.adjacencyList[v]) {
+        if (!visited[adjVertex]) {
+          helper(adjVertex);
+        }
+      }
+    };
+
+    helper(start);
+
+    return result;
+  }
+
+  DFS_iterative(start) {
+    let stack = [start];
+    let result = [];
+    let visited = {};
+
+    visited[start] = true;
+    while (stack.length) {
+      let v = stack.pop();
+      result.push(v);
+
+      for (let neighbor of this.adjacencyList[v]) {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          stack.push(neighbor);
+        }
+      }
+    }
+
+    return result;
+  }
+
+  BFS(start) {
+    let queue = [start];
+    let result = [];
+    let visited = {};
+
+    visited[start] = true;
+    while (queue.length) {
+      let v = queue.shift();
+      result.push(v);
+
+      for (let neighbor of this.adjacencyList[v]) {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          queue.push(neighbor);
+        }
+      }
+    }
+
+    return result;
+  }
 }
 
 let g = new Graph();
-g.addVertex('Tokyo');
-g.addVertex('Dallas');
-g.addVertex('Aspen');
-g.addEdge('Tokyo', 'Dallas');
-g.addEdge('Tokyo', 'Aspen');
-g.addEdge('Dallas', 'Aspen');
-g.removeVertex('Tokyo');
-g;
+g.addVertex('A');
+g.addVertex('B');
+g.addVertex('C');
+g.addVertex('D');
+g.addVertex('E');
+g.addVertex('F');
+
+g.addEdge('A', 'B');
+g.addEdge('A', 'C');
+g.addEdge('B', 'D');
+g.addEdge('C', 'E');
+g.addEdge('D', 'E');
+g.addEdge('D', 'F');
+g.addEdge('E', 'F');
+
+console.log(g.DFS_recursive('A'));
+console.log(g.DFS_iterative('A'));
+console.log(g.BFS('A'));
